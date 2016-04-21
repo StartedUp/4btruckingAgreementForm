@@ -303,7 +303,7 @@
 					sessionStorage.setItem("agreementType", "ContractCarrierAgreement");
 					$.ajax({
 						//79.125.22.83
-						url : "http://localhost:8080/4bTruckingAgreementSave/rest/PdfService/editForm",
+						url : "http://79.125.22.83:8080/4bTruckingAgreementSave/rest/PdfService/editFormItext",
 						type : "GET",
 						dataType : "text",
 						data : {
@@ -311,7 +311,7 @@
 						},
 						success : function() {
 							$('#load').hide();
-							window.open("http://localhost:8080/4bTruckingAgreementSave/ContractCarrierAgreement.pdf");
+							window.open("http://79.125.22.83:8080/4bTruckingAgreementSave/ContractCarrierAgreement.pdf");
 						}
 					});
 				});
@@ -528,7 +528,7 @@
 		<div style="text-align:center">
 			<button type="button" class="btn btn-success" id="save">
 				SaveAgreement
-			</button><span><img id="load" style="display:none" src="http://localhost:8080/4bTruckingAgreementSave/load.gif"/></span>
+			</button><span><img id="load" style="display:none" src="http://79.125.22.83:8080/4bTruckingAgreementSave/load.gif"/></span>
 		</div>
 	</body>
 </html>
