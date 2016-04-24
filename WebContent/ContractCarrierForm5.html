@@ -2,7 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<base href="https://fs22.formsite.com/4btrucking/" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="expires" content="0" />
 <meta name="twitter:card" content="summary" />
@@ -16,11 +15,11 @@
 <meta property="fb:admins" content="150429050199"/>
 <title>Contract Carrier Agreement</title>
 <link rel="stylesheet" type="text/css" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
-<link rel="stylesheet" type="text/css" media="all" href="/include/form/fonts7.css?1504" />
-<link rel="stylesheet" type="text/css" media="all" href="/include/form/screen7.css?1504" />
-<link rel="stylesheet" type="text/css" media="print" href="/include/form/print7.css?1504" />
+<link rel="stylesheet" type="text/css" media="all" href="CSS/fonts7.css?1504" />
+<link rel="stylesheet" type="text/css" media="all" href="CSS/screen7.css?1504" />
+<link rel="stylesheet" type="text/css" media="print" href="CSS/print7.css?1504" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<link rel="stylesheet" type="text/css" media="screen" href="/include/form/responsive7.css?1504" />
+<link rel="stylesheet" type="text/css" media="screen" href="CSS/responsive7.css?1504" />
 <style type="text/css" media="all">
 /* LOOK AND FEEL */
 body{
@@ -104,7 +103,7 @@ body{
 	color: #000000;
 	margin: 1px 0;
 	padding: 5px;
-	background: #FFFFFF url(/images/forms/field_bg.png) -4px -4px;
+	background: #FFFFFF url(CSS/field_bg.png) -4px -4px;
 	border-radius: 2px;
 	font-size: 12px;
 }
@@ -129,7 +128,7 @@ body{
 }
 
 .q .drop_down{
-	background: #FFFFFF url(/images/forms/field_bg.png) -4px -4px;
+	background: #FFFFFF url(CSS/field_bg.png) -4px -4px;
 	border: 1px solid #CCCCCC;
 	color: #000000;
 	margin: 1px 0;
@@ -287,11 +286,36 @@ tr.highlight td{
 <!--[if lt IE 9]>
 <script type="text/javascript" src="/include/form/signature/flashcanvas.js" defer="defer"></script>
 <![endif]-->
-<script type="text/javascript" src="/include/form/signature/jSignature.min.js" defer="defer"></script>
-<script type="text/javascript" src="/include/form/form7.js?1504"></script>
+<script type="text/javascript" src="CSS/jSignature.min.js" defer="defer"></script>
+<script type="text/javascript" src="CSS/form7.js?1504"></script>
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$('#save').click(function() {
+			$('#load').show();
+			var carrierName = (sessionStorage.getItem("Printed Name") == null ? "" : sessionStorage.getItem("Printed Name")) + " " + (sessionStorage.getItem("lastName") == null ? "" : sessionStorage.getItem("lastName"));
+			var carrierAddress = (sessionStorage.getItem("Street Address") == null ? "" : sessionStorage.getItem("Street Address")) + " " + (sessionStorage.getItem("Address Line 2") == null ? "" : sessionStorage.getItem("Address Line 2"));
+			sessionStorage.setItem("Carrier Address", carrierAddress);
+			sessionStorage.setItem("Carrier Name", carrierName);
+			sessionStorage.setItem("agreementType", "ContractCarrierAgreement");
+			$.ajax({
+				//79.125.22.83
+				url : "http://52.34.145.199:8080/4bTruckingAgreementSave/rest/PdfService/editFormItext",
+				type : "GET",
+				dataType : "text",
+				data : {
+					data : JSON.stringify(sessionStorage)
+				},
+				success : function() {
+					$('#load').hide();
+					window.open("http://52.34.145.199:8080/4bTruckingAgreementSave/ContractCarrierAgreement.pdf");
+				}
+			});
+		});
+	});
+		</script>
 </head>
 <body>
-<form method="post" id="FSForm" action="https://fs22.formsite.com/res/submit" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
+<form method="post" id="FSForm" action="ContractCarrierForm6.html" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
 <div style="display:none;">
 <input type="hidden" name="locid" value="4btrucking/form1" />
 <input type="hidden" name="EParam" value="AT1kKIiyxDwgkMDpqMn6KKeLTfEDMMCuUSAE7pKjsPcv9TkEB8OdkvoWvOA+Hn6CWWFpqiAL4jOA58sbHKpoJEFDYI1vrIFNQNCn7LR3suKoy/dF7FhS8oYZNV08ZRL9TdUjlzv0LJI=" />
@@ -443,7 +467,13 @@ tr.highlight td{
 <script type="text/javascript">var itemRules={72:{"criteria":[{"item":62,"answer":"0","operator":"=="}],"action":"show","join":"||"},73:{"criteria":[{"item":62,"answer":"1","operator":"=="},{"item":62,"answer":"2","operator":"=="},{"item":62,"answer":"3","operator":"=="},{"item":62,"answer":"4","operator":"=="},{"item":62,"answer":"5","operator":"=="},{"item":62,"answer":"6","operator":"=="}],"action":"show","join":"||"}};</script>
 <input type="hidden" name="EParam" value="x8J1JeDzqXbNEH7voML6xE4oEHBHyhKB" />
 <div class="outside_container">
-<div class="buttons_reverse"><input type="submit" name="Submit" value="Submit" class="submit_button" id="FSsubmit" /><input type="submit" name="PreviousSubmit" value="&lt;&lt; Previous" class="submit_button" id="FSpreviousSubmit" /></div></div>
+<div class="buttons_reverse">
+	<input type="submit" name="Submit" value="Submit" class="submit_button" id="FSsubmit" />
+	<input type="button" name="PreviousSubmit" value="&lt;&lt; Save Pdf" class="submit_button" id="save" />
+	<span><img id="load" style="display: none" src="http://52.34.145.199/:8080/4bTruckingAgreementSave/load.gif" /></span>
+</div>
+</div>
+</div>
 </form>
 </body>
 </html>

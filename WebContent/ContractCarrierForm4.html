@@ -2,7 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<base href="https://fs22.formsite.com/4btrucking/" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="expires" content="0" />
 <meta name="twitter:card" content="summary" />
@@ -16,11 +15,11 @@
 <meta property="fb:admins" content="150429050199"/>
 <title>Contract Carrier Agreement</title>
 <link rel="stylesheet" type="text/css" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
-<link rel="stylesheet" type="text/css" media="all" href="/include/form/fonts7.css?1504" />
-<link rel="stylesheet" type="text/css" media="all" href="/include/form/screen7.css?1504" />
-<link rel="stylesheet" type="text/css" media="print" href="/include/form/print7.css?1504" />
+<link rel="stylesheet" type="text/css" media="all" href="CSS/fonts7.css?1504" />
+<link rel="stylesheet" type="text/css" media="all" href="CSS/screen7.css?1504" />
+<link rel="stylesheet" type="text/css" media="print" href="CSS/print7.css?1504" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<link rel="stylesheet" type="text/css" media="screen" href="/include/form/responsive7.css?1504" />
+<link rel="stylesheet" type="text/css" media="screen" href="CSS/responsive7.css?1504" />
 <style type="text/css" media="all">
 /* LOOK AND FEEL */
 body{
@@ -104,7 +103,7 @@ body{
 	color: #000000;
 	margin: 1px 0;
 	padding: 5px;
-	background: #FFFFFF url(/images/forms/field_bg.png) -4px -4px;
+	background: #FFFFFF url(CSS/field_bg.png) -4px -4px;
 	border-radius: 2px;
 	font-size: 12px;
 }
@@ -129,7 +128,7 @@ body{
 }
 
 .q .drop_down{
-	background: #FFFFFF url(/images/forms/field_bg.png) -4px -4px;
+	background: #FFFFFF url(CSS/field_bg.png) -4px -4px;
 	border: 1px solid #CCCCCC;
 	color: #000000;
 	margin: 1px 0;
@@ -287,11 +286,18 @@ tr.highlight td{
 <!--[if lt IE 9]>
 <script type="text/javascript" src="/include/form/signature/flashcanvas.js" defer="defer"></script>
 <![endif]-->
-<script type="text/javascript" src="/include/form/signature/jSignature.min.js" defer="defer"></script>
-<script type="text/javascript" src="/include/form/form7.js?1504"></script>
+<script type="text/javascript" src="CSS/jSignature.min.js" defer="defer"></script>
+<script type="text/javascript" src="CSS/form7.js?1504"></script>
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$('input[type=text]').change(function() {
+			sessionStorage.setItem(this.id, this.value);
+		});
+	});
+</script>
 </head>
 <body>
-<form method="post" id="FSForm" action="https://fs22.formsite.com/res/submit" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
+<form method="post" id="FSForm" action="ContractCarrierForm5.html" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
 <div style="display:none;">
 <input type="hidden" name="locid" value="4btrucking/form1" />
 <input type="hidden" name="EParam" value="AT1kKIiyxDwgkMDpqMn6KKeLTfEDMMCuUSAE7pKjsPcv9TkEB8OdkvoWvOA+Hn6CP12XcNKCc5GA58sbHKpoJEFDYI1vrIFNQNCn7LR3suKoy/dF7FhS8k3VI5c79CyS" />
@@ -300,7 +306,7 @@ tr.highlight td{
 <input type="text" name="subject_line" id="subject_line" autocomplete="off" /><label for="subject_line">subject_line</label>
 </div>
 
-<div align="center" class="outside"><div style="text-align: center;"><span style="font-size: 20px; color: #ff0000; font-family: 'arial black', 'avant garde';"><img src="https://fs22.formsite.com/4btrucking/images/4B-Logo-Small.gif" alt="" width="300" height="200" /></span></div>
+<div align="center" class="outside"><div style="text-align: center;"><span style="font-size: 20px; color: #ff0000; font-family: 'arial black', 'avant garde';"><img src="CSS/4B-Logo-Small.gif" alt="" width="300" height="200" /></span></div>
 <div style="text-align: center;">&nbsp;</div>
 <div style="text-align: center;"><span style="font-size: 20px; color: #ff0000; font-family: 'arial black', 'avant garde';">Contract Carrier Agreement</span></div></div>
 <div class="outside_container"><div class="progressBarWrapper" ><div class="progressBarBack" style=" width:60%; " ><div class="progressBarText" >60%&nbsp;Complete</div></div><div class="progressBarFront" ><div class="progressBarText" >60%&nbsp;Complete</div></div></div></div>
@@ -319,7 +325,7 @@ tr.highlight td{
 <div id="q49" class="q required">
 <a class="item_anchor" name="ItemAnchor57"></a>
 <label class="question top_question" for="RESULT_TextField-57">Insurance Agent's Name&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-57" class="text_field" id="RESULT_TextField-57"  size="25" maxlength="100" value="" />
+<input type="text" name="RESULT_TextField-57" class="text_field" id="Insurance Agent"  size="25" maxlength="100" value="" />
 </div>
 
 <div class="clear"></div>
@@ -327,7 +333,7 @@ tr.highlight td{
 <div id="q50" class="q required">
 <a class="item_anchor" name="ItemAnchor58"></a>
 <label class="question top_question" for="RESULT_TextField-58">Insurance Agent Phone Number&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-58" class="text_field" id="RESULT_TextField-58"  size="11" maxlength="11" value="" />
+<input type="text" name="RESULT_TextField-58" class="text_field" id="Agent Phone"  size="11" maxlength="11" value="" />
 </div>
 
 <div class="clear"></div>
@@ -335,7 +341,7 @@ tr.highlight td{
 <div id="q54" class="q">
 <a class="item_anchor" name="ItemAnchor59"></a>
 <label class="question top_question" for="RESULT_TextField-59">Insurance Agent Fax Number</label>
-<input type="text" name="RESULT_TextField-59" class="text_field" id="RESULT_TextField-59"  size="11" maxlength="11" value="" />
+<input type="text" name="RESULT_TextField-59" class="text_field" id="Agent Fax"  size="11" maxlength="11" value="" />
 </div>
 
 <div class="clear"></div>
@@ -351,7 +357,7 @@ tr.highlight td{
 <div id="q51" class="q required">
 <a class="item_anchor" name="ItemAnchor61"></a>
 <label class="question top_question" for="RESULT_TextField-61">Insurance Policy Number&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-61" class="text_field" id="RESULT_TextField-61"  size="25" maxlength="25" value="" />
+<input type="text" name="RESULT_TextField-61" class="text_field" id="Insured Policy Number"  size="25" maxlength="25" value="" />
 </div>
 
 <div class="clear"></div>
@@ -359,8 +365,8 @@ tr.highlight td{
 <div id="q52" class="q required">
 <a class="item_anchor" name="ItemAnchor62"></a>
 <label class="question top_question" for="RESULT_TextField-62">Insurance Start Date&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-62" class="text_field calendar_field" id="RESULT_TextField-62" size="10" maxlength="10" datemax="" datemin="" value="" date="yy-mm-dd" /><img class="svg popup_button inline_button" src="/images/icons/formIcons/calendar.svg" alt="calendar" style="vertical-align:middle;"/>
-<img class="gif popup_button inline_button" src="/images/icons/formIcons/calendar.gif" alt="calendar" style="vertical-align:middle;"/>
+<input type="text" name="RESULT_TextField-62" class="text_field calendar_field" id="RESULT_TextField-62" size="10" maxlength="10" datemax="" datemin="" value="" date="yy-mm-dd" /><img class="svg popup_button inline_button" src="CSS/calendar.svg" alt="calendar" style="vertical-align:middle;"/>
+<img class="gif popup_button inline_button" src="CSS/calendar.gif" alt="calendar" style="vertical-align:middle;"/>
 
 </div>
 
@@ -369,8 +375,8 @@ tr.highlight td{
 <div id="q53" class="q required">
 <a class="item_anchor" name="ItemAnchor63"></a>
 <label class="question top_question" for="RESULT_TextField-63">Insurance Expiration Date&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-63" class="text_field calendar_field" id="RESULT_TextField-63" size="10" maxlength="10" datemax="" datemin="" value="" date="yy-mm-dd" /><img class="svg popup_button inline_button" src="/images/icons/formIcons/calendar.svg" alt="calendar" style="vertical-align:middle;"/>
-<img class="gif popup_button inline_button" src="/images/icons/formIcons/calendar.gif" alt="calendar" style="vertical-align:middle;"/>
+<input type="text" name="RESULT_TextField-63" class="text_field calendar_field" id="RESULT_TextField-63" size="10" maxlength="10" datemax="" datemin="" value="" date="yy-mm-dd" /><img class="svg popup_button inline_button" src="CSS/calendar.svg" alt="calendar" style="vertical-align:middle;"/>
+<img class="gif popup_button inline_button" src="CSS/calendar.gif" alt="calendar" style="vertical-align:middle;"/>
 
 </div>
 <div class="clear"></div>
@@ -379,7 +385,8 @@ tr.highlight td{
 <!-- END_ITEMS -->
 <input type="hidden" name="EParam" value="x8J1JeDzqXbNEH7voML6xE4oEHBHyhKB" />
 <div class="outside_container">
-<div class="buttons_reverse"><input type="submit" name="Submit" value="Next &gt;&gt;" class="submit_button" id="FSsubmit" /><input type="submit" name="PreviousSubmit" value="&lt;&lt; Previous" class="submit_button" id="FSpreviousSubmit" /></div></div>
+<div class="buttons_reverse"><input type="submit" name="Submit" value="Next &gt;&gt;" class="submit_button" id="FSsubmit" /></div>
+</div>
 </form>
 </body>
 </html>

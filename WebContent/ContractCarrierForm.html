@@ -299,71 +299,19 @@ tr.highlight td {
 <script type="text/javascript" src="CSS/jSignature.min.js" defer="defer"></script>
 <script type="text/javascript" src="CSS/form7.js?1504"></script>
 <script>
-	$(document)
-			.ready(
-					function() {
-						sessionStorage.clear();
-
-						$('input:radio').change(function() {
-							if ($('#RESULT_RadioButton-3_1').is(':checked')) {
-								$("#q60").show();
-							} else {
-								$("#q60").hide();
-							}
-
-						});
-						$('input').change(function() {
-							sessionStorage.setItem(this.id, this.value);
-						});
-						$('#save')
-								.click(
-										function() {
-											$('#load').show();
-											var carrierName = (sessionStorage
-													.getItem("Printed Name") == null ? ""
-													: sessionStorage
-															.getItem("Printed Name"))
-													+ " "
-													+ (sessionStorage
-															.getItem("lastName") == null ? ""
-															: sessionStorage
-																	.getItem("lastName"));
-											var carrierAddress = (sessionStorage
-													.getItem("Street Address") == null ? ""
-													: sessionStorage
-															.getItem("Street Address"))
-													+ " "
-													+ (sessionStorage
-															.getItem("Address Line 2") == null ? ""
-															: sessionStorage
-																	.getItem("Address Line 2"));
-											sessionStorage.setItem(
-													"Carrier Address",
-													carrierAddress);
-											sessionStorage
-													.setItem("Carrier Name",
-															carrierName);
-											sessionStorage.setItem(
-													"agreementType",
-													"ContractCarrierAgreement");
-											$
-													.ajax({
-														//79.125.22.83
-														url : "http://79.125.22.83:8080/4bTruckingAgreementSave/rest/PdfService/editFormItext",
-														type : "GET",
-														dataType : "text",
-														data : {
-															data : JSON
-																	.stringify(sessionStorage)
-														},
-														success : function() {
-															$('#load').hide();
-															window
-																	.open("http://79.125.22.83:8080/4bTruckingAgreementSave/ContractCarrierAgreement.pdf");
-														}
-													});
-										});
-					});
+	$(document).ready(function() {
+		sessionStorage.clear();
+		$('input:radio').change(function() {
+			if ($('#RESULT_RadioButton-3_1').is(':checked')) {
+				$("#q60").show();
+			} else {
+				$("#q60").hide();
+			}
+		});
+		$('input').change(function() {
+			sessionStorage.setItem(this.id, this.value);
+		});
+	}); 
 </script>
 </head>
 <body>
@@ -470,14 +418,14 @@ tr.highlight td {
 
 				<div class="clear"></div>
 
-				<div id="q60" class="q" style="display: none;>
+				<div id="q60" class="q" style="display: none;">
 				<a class="
 					item_anchor" name="ItemAnchor4">
 					</a> <label class="question left_question_first"
 						for="RESULT_TextField-4">Legal Entity Name</label>
 					<div class="inline_answer">
 						<input type="text" name="RESULT_TextField-4" class="text_field"
-							id="RESULT_TextField-4" size="25" maxlength="100" value="" />
+							id="Legal Name" size="25" maxlength="100" value="" />
 					</div>
 				</div>
 
@@ -497,7 +445,6 @@ tr.highlight td {
 				</div>
 
 				<div class="clear"></div>
-
 				<div id="q3" class="q">
 					<a class="item_anchor" name="ItemAnchor6"></a> <label
 						class="question left_question_first" for="RESULT_TextField-6">Address
@@ -541,7 +488,7 @@ tr.highlight td {
 					</label>
 					<div class="inline_answer">
 						<input type="text" name="RESULT_TextField-9" class="text_field"
-							id="ZipCode" size="25" value="" />
+							id="Zip Code" size="25" value="" />
 					</div>
 				</div>
 
@@ -554,7 +501,7 @@ tr.highlight td {
 					</label>
 					<div class="inline_answer">
 						<input type="text" name="RESULT_TextField-10" class="text_field"
-							id="phoneNumber" size="25" maxlength="255" value="" />
+							id="Phone" size="25" maxlength="255" value="" />
 					</div>
 				</div>
 

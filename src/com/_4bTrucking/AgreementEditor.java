@@ -103,9 +103,9 @@ String test = "/data/tomcat8/webapps/4bTruckingAgreementSave/"
 				+ agreementType + "Src.pdf";
 		String test = "G:/Softwares/webserver/apache-tomcat-8.0.27/apache-tomcat-8.0.27/webapps/4bTruckingAgreementSave/"
 				+ agreementType + ".pdf";*/
-		String src = "/data/apache-tomcat-7.0.35/webapps/4bTruckingAgreementSave/"
+		String src = "/data/tomcat8/webapps/4bTruckingAgreementSave/"
 				+ agreementType + "Src.pdf";
-		String test = "/data/apache-tomcat-7.0.35/webapps/4bTruckingAgreementSave/"
+		String test = "/data/tomcat8/webapps/4bTruckingAgreementSave/"
 				+ agreementType + ".pdf";
 		PdfStamper stamper = null;
 		PdfReader reader = null;

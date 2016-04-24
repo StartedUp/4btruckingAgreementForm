@@ -2,7 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<base href="https://fs22.formsite.com/4btrucking/" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="expires" content="0" />
 <meta name="twitter:card" content="summary" />
@@ -16,11 +15,11 @@
 <meta property="fb:admins" content="150429050199"/>
 <title>Contract Carrier Agreement</title>
 <link rel="stylesheet" type="text/css" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
-<link rel="stylesheet" type="text/css" media="all" href="/include/form/fonts7.css?1504" />
-<link rel="stylesheet" type="text/css" media="all" href="/include/form/screen7.css?1504" />
-<link rel="stylesheet" type="text/css" media="print" href="/include/form/print7.css?1504" />
+<link rel="stylesheet" type="text/css" media="all" href="CSS/fonts7.css?1504" />
+<link rel="stylesheet" type="text/css" media="all" href="CSS/screen7.css?1504" />
+<link rel="stylesheet" type="text/css" media="print" href="CSS/print7.css?1504" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<link rel="stylesheet" type="text/css" media="screen" href="/include/form/responsive7.css?1504" />
+<link rel="stylesheet" type="text/css" media="screen" href="CSS/responsive7.css?1504" />
 <style type="text/css" media="all">
 /* LOOK AND FEEL */
 body{
@@ -104,7 +103,7 @@ body{
 	color: #000000;
 	margin: 1px 0;
 	padding: 5px;
-	background: #FFFFFF url(/images/forms/field_bg.png) -4px -4px;
+	background: #FFFFFF url(CSS/field_bg.png) -4px -4px;
 	border-radius: 2px;
 	font-size: 12px;
 }
@@ -129,7 +128,7 @@ body{
 }
 
 .q .drop_down{
-	background: #FFFFFF url(/images/forms/field_bg.png) -4px -4px;
+	background: #FFFFFF url(CSS/field_bg.png) -4px -4px;
 	border: 1px solid #CCCCCC;
 	color: #000000;
 	margin: 1px 0;
@@ -287,11 +286,21 @@ tr.highlight td{
 <!--[if lt IE 9]>
 <script type="text/javascript" src="/include/form/signature/flashcanvas.js" defer="defer"></script>
 <![endif]-->
-<script type="text/javascript" src="/include/form/signature/jSignature.min.js" defer="defer"></script>
-<script type="text/javascript" src="/include/form/form7.js?1504"></script>
+<script type="text/javascript" src="CSS/jSignature.min.js" defer="defer"></script>
+<script type="text/javascript" src="CSS/form7.js?1504"></script>
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$('select, input').change(function() {
+			sessionStorage.setItem(this.id, this.value);
+		});
+		$('input[type=text]').change(function() {
+			sessionStorage.setItem(this.id, this.value);
+		});
+	});
+</script>
 </head>
 <body>
-<form method="post" id="FSForm" action="https://fs22.formsite.com/res/submit" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
+<form method="post" id="FSForm" action="ContractCarrierForm4.html" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
 <div style="display:none;">
 <input type="hidden" name="locid" value="4btrucking/form1" />
 <input type="hidden" name="EParam" value="AT1kKIiyxDwgkMDpqMn6KKeLTfEDMMCuUSAE7pKjsPcv9TkEB8OdkvoWvOA+Hn6CLy9APUASPC2A58sbHKpoJEFDYI1vrIFNQNCn7LR3suJN1SOXO/Qskg==" />
@@ -319,13 +328,13 @@ tr.highlight td{
 <div id="q16" class="q required">
 <a class="item_anchor" name="ItemAnchor24"></a>
 <label class="question top_question" for="RESULT_RadioButton-24">Number of Trucks&nbsp;<b class="icon_required">*</b></label>
-<select id="RESULT_RadioButton-24" name="RESULT_RadioButton-24" class="drop_down">
+<select id="of Trucks" name="RESULT_RadioButton-24" class="drop_down">
 <option></option>
-<option value="Radio-0">1 Truck</option>
-<option value="Radio-1">2 Trucks</option>
-<option value="Radio-2">3 Trucks</option>
-<option value="Radio-3">4 Trucks</option>
-<option value="Radio-4">5 or More Trucks</option>
+<option >1 Truck</option>
+<option >2 Trucks</option>
+<option >3 Trucks</option>
+<option >4 Trucks</option>
+<option >5 or More Trucks</option>
 </select>
 </div>
 
@@ -334,14 +343,14 @@ tr.highlight td{
 <div id="q17" class="q required">
 <a class="item_anchor" name="ItemAnchor25"></a>
 <label class="question top_question" for="RESULT_RadioButton-25">Number of End Dumps&nbsp;<b class="icon_required">*</b></label>
-<select id="RESULT_RadioButton-25" name="RESULT_RadioButton-25" class="drop_down">
+<select id="of End Dumps" name="RESULT_RadioButton-25" class="drop_down">
 <option></option>
-<option value="Radio-0" selected="selected">0</option>
-<option value="Radio-1">1 End Dump</option>
-<option value="Radio-2">2 End Dumps</option>
-<option value="Radio-3">3 End Dumps</option>
-<option value="Radio-4">4 End Dumps</option>
-<option value="Radio-5">5 or More End Dumps</option>
+<option  selected="selected">0</option>
+<option >1 End Dump</option>
+<option >2 End Dumps</option>
+<option >3 End Dumps</option>
+<option >4 End Dumps</option>
+<option >5 or More End Dumps</option>
 </select>
 </div>
 
@@ -350,14 +359,14 @@ tr.highlight td{
 <div id="q18" class="q required">
 <a class="item_anchor" name="ItemAnchor26"></a>
 <label class="question top_question" for="RESULT_RadioButton-26">Number of Belly Dumps&nbsp;<b class="icon_required">*</b></label>
-<select id="RESULT_RadioButton-26" name="RESULT_RadioButton-26" class="drop_down">
+<select id="of Belly Dumps" name="RESULT_RadioButton-26" class="drop_down">
 <option></option>
-<option value="Radio-0" selected="selected">0</option>
-<option value="Radio-1">1 Belly Dump</option>
-<option value="Radio-2">2 Belly Dumps</option>
-<option value="Radio-3">3 Belly Dumps</option>
-<option value="Radio-4">4 Belly Dumps</option>
-<option value="Radio-5">5 or More Belly Dumps</option>
+<option  selected="selected">0</option>
+<option >1 Belly Dump</option>
+<option >2 Belly Dumps</option>
+<option >3 Belly Dumps</option>
+<option >4 Belly Dumps</option>
+<option >5 or More Belly Dumps</option>
 </select>
 </div>
 
@@ -366,14 +375,14 @@ tr.highlight td{
 <div id="q19" class="q required">
 <a class="item_anchor" name="ItemAnchor27"></a>
 <label class="question top_question" for="RESULT_RadioButton-27">Number of 1/2 Round Dumps&nbsp;<b class="icon_required">*</b></label>
-<select id="RESULT_RadioButton-27" name="RESULT_RadioButton-27" class="drop_down">
+<select id="of Round Dumps" name="RESULT_RadioButton-27" class="drop_down">
 <option></option>
-<option value="Radio-0" selected="selected">0</option>
-<option value="Radio-1">1 1/2 Round Dump</option>
-<option value="Radio-2">2 1/2 Round Dumps</option>
-<option value="Radio-3">3 1/2 Round Dumps</option>
-<option value="Radio-4">4 1/2 Round Dumps</option>
-<option value="Radio-5">5 or More 1/2 Round Dumps</option>
+<option  selected="selected">0</option>
+<option >1 1/2 Round Dump</option>
+<option >2 1/2 Round Dumps</option>
+<option >3 1/2 Round Dumps</option>
+<option >4 1/2 Round Dumps</option>
+<option >5 or More 1/2 Round Dumps</option>
 </select>
 </div>
 
@@ -382,14 +391,14 @@ tr.highlight td{
 <div id="q20" class="q required">
 <a class="item_anchor" name="ItemAnchor28"></a>
 <label class="question top_question" for="RESULT_RadioButton-28">Number of Bobtail/Truck & Pup&nbsp;<b class="icon_required">*</b></label>
-<select id="RESULT_RadioButton-28" name="RESULT_RadioButton-28" class="drop_down">
+<select id="of BobtailsTP" name="RESULT_RadioButton-28" class="drop_down">
 <option></option>
-<option value="Radio-0" selected="selected">0</option>
-<option value="Radio-1">1 Bobtail/Truck & Pup</option>
-<option value="Radio-2">2 Bobtail/Truck & Pup</option>
-<option value="Radio-3">3 Bobtail/Truck & Pup</option>
-<option value="Radio-4">4 Bobtail/Truck & Pup</option>
-<option value="Radio-5">5 or More Bobtail/Truck & Pup</option>
+<option  selected="selected">0</option>
+<option >1 Bobtail/Truck & Pup</option>
+<option >2 Bobtail/Truck & Pup</option>
+<option >3 Bobtail/Truck & Pup</option>
+<option >4 Bobtail/Truck & Pup</option>
+<option >5 or More Bobtail/Truck & Pup</option>
 </select>
 </div>
 
@@ -398,7 +407,7 @@ tr.highlight td{
 <div id="q21" class="q required">
 <a class="item_anchor" name="ItemAnchor29"></a>
 <label class="question top_question" for="RESULT_TextField-29">Primary Parking Location&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-29" class="text_field" id="RESULT_TextField-29"  size="25" maxlength="255" value="" />
+<input type="text" name="RESULT_TextField-29" class="text_field" id="Parking Location"  size="25" maxlength="255" value="" />
 </div>
 
 <div class="clear"></div>
@@ -556,7 +565,8 @@ tr.highlight td{
 <!-- END_ITEMS -->
 <input type="hidden" name="EParam" value="x8J1JeDzqXbNEH7voML6xE4oEHBHyhKB" />
 <div class="outside_container">
-<div class="buttons_reverse"><input type="submit" name="Submit" value="Next &gt;&gt;" class="submit_button" id="FSsubmit" /><input type="submit" name="PreviousSubmit" value="&lt;&lt; Previous" class="submit_button" id="FSpreviousSubmit" /></div></div>
+<div class="buttons_reverse"><input type="submit" name="Submit" value="Next &gt;&gt;" class="submit_button" id="FSsubmit" /></div>
+</div>
 </form>
 </body>
 </html>
