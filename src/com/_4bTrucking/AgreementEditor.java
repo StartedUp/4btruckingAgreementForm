@@ -98,7 +98,7 @@ String test = "/data/tomcat8/webapps/4bTruckingAgreementSave/"
 		}.getType();
 		Map<String, String> fieldNameAndValue = gson.fromJson(data, type);
 		String agreementType = fieldNameAndValue.get("agreementType");
-		System.out.println(fieldNameAndValue);
+		//System.out.println(fieldNameAndValue);
 		/*String src = "G:/Softwares/webserver/apache-tomcat-8.0.27/apache-tomcat-8.0.27/webapps/4bTruckingAgreementSave/"
 				+ agreementType + "Src.pdf";
 		String test = "G:/Softwares/webserver/apache-tomcat-8.0.27/apache-tomcat-8.0.27/webapps/4bTruckingAgreementSave/"
@@ -120,14 +120,20 @@ String test = "/data/tomcat8/webapps/4bTruckingAgreementSave/"
 	        {
 	        	String key = entry.getKey();
 	        	String field=form.getField(key);
-	        	System.out.println(key +" "+entry.getValue()+" "+form.getFieldType(key));
-	        	if (key!=null && entry.getValue()!=null && form.getFieldType(key)!=6) {
-	        		form.setFieldProperty(key, "textsize", new Float(14), null);
+	        	System.out.println(key +" - "+fieldNameAndValue.get(key));
+	        	form.setGenerateAppearances(true);
+	        	if (key!=null && form.getFieldType(key)!=6) {
+	        		form.setFieldProperty(key, "textsize", new Float(0), null);
 	        		form.setField(key, fieldNameAndValue.get(key));
 				}
+	        	if(key!=null && form.getFieldType(key)==6){
+	        		form.setListSelection(key, new String []{fieldNameAndValue.get(key)});
+	        		for (String string : form.getListSelection(key)) {
+	        			System.out.println(string);
+					}
+	        	}
 	        }
-	        form.setFieldProperty("Legal Name", "textsize", new Float(8), null);
-	        form.setField("Legal Name", fieldNameAndValue.get("Legal Name"));
+	        //form.setField("LegalName", "Prithvi Prakash");	
 	        stamper.setFormFlattening(true);
 	        stamper.close();
 		} catch (Exception e) {

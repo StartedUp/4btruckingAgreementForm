@@ -294,17 +294,19 @@ tr.highlight td{
 			$('#load').show();
 			var carrierName = (sessionStorage.getItem("Printed Name") == null ? "" : sessionStorage.getItem("Printed Name")) + " " + (sessionStorage.getItem("lastName") == null ? "" : sessionStorage.getItem("lastName"));
 			var carrierAddress = (sessionStorage.getItem("Street Address") == null ? "" : sessionStorage.getItem("Street Address")) + " " + (sessionStorage.getItem("Address Line 2") == null ? "" : sessionStorage.getItem("Address Line 2"));
-			sessionStorage.setItem("Carrier Address", carrierAddress);
-			sessionStorage.setItem("Carrier Name", carrierName);
+			sessionStorage.setItem("CarrierAddress", carrierAddress);
+			sessionStorage.setItem("CarrierName", carrierName);
+			sessionStorage.setItem("Title", "trucking");
 			sessionStorage.setItem("agreementType", "ContractCarrierAgreement");
 			$.ajax({
-				//79.125.22.83
+				//52.34.145.199
 				url : "http://52.34.145.199:8080/4bTruckingAgreementSave/rest/PdfService/editFormItext",
 				type : "GET",
 				dataType : "text",
 				data : {
 					data : JSON.stringify(sessionStorage)
 				},
+				crossDomain: true,
 				success : function() {
 					$('#load').hide();
 					window.open("http://52.34.145.199:8080/4bTruckingAgreementSave/ContractCarrierAgreement.pdf");
@@ -351,15 +353,15 @@ tr.highlight td{
 <div id="q62" class="q required">
 <a class="item_anchor" name="ItemAnchor67"></a>
 <label class="question top_question" for="RESULT_RadioButton-67">Federal Tax Classification&nbsp;<b class="icon_required">*</b></label>
-<select id="RESULT_RadioButton-67" name="RESULT_RadioButton-67" class="drop_down">
+<select id="Tax Classification" name="RESULT_RadioButton-67" class="drop_down" onchange="sessionStorage.setItem(this.id,this.value)">
 <option></option>
-<option value="Radio-0">Individual or Single Member LLC</option>
-<option value="Radio-1">C Corporation</option>
-<option value="Radio-2">S Corporation</option>
-<option value="Radio-3">Parternship</option>
-<option value="Radio-4">Trust/Estate</option>
-<option value="Radio-5">Limited Liability Corporation</option>
-<option value="Radio-6">Other</option>
+<option >Individual or Single Member LLC</option>
+<option >C Corporation</option>
+<option >S Corporation</option>
+<option >Parternship</option>
+<option >Trust/Estate</option>
+<option >Limited Liability Corporation</option>
+<option >Other</option>
 </select>
 </div>
 
@@ -470,7 +472,7 @@ tr.highlight td{
 <div class="buttons_reverse">
 	<input type="submit" name="Submit" value="Submit" class="submit_button" id="FSsubmit" />
 	<input type="button" name="PreviousSubmit" value="&lt;&lt; Save Pdf" class="submit_button" id="save" />
-	<span><img id="load" style="display: none" src="http://52.34.145.199/:8080/4bTruckingAgreementSave/load.gif" /></span>
+	<span><img id="load" style="display: none" src="load.gif" /></span>
 </div>
 </div>
 </div>
