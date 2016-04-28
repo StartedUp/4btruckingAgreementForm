@@ -293,33 +293,16 @@ var instructions = {};
 instructions[26] = "Base Lease Fee is required.  The other choices are optional.";
 </script>
 <script>
-$( document ).ready(function() {
-$('input').change(function () { 
-	sessionStorage.setItem(this.id,this.value);
-});
-$('#save').click(function(){
-		sessionStorage.setItem("agreementType","TruckLeaseAndServiceAgreement");
-		$.ajax({
-    url : "http://localhost:8080/EditAgreementForm/rest/PdfService/editForm",
-    type: "GET",
-    data : {data:JSON.stringify(sessionStorage)},
-    success: function()
-    {
-       window.open("file:///G:/my_db/MyGit/StartedUp/AgreementForm/ContractCarrierAgreement.pdf");
-    },
-    error: function ()
-    {
- 		alert('Something went wrong try again');
- 		window.open("file:///G:/my_db/MyGit/StartedUp/AgreementForm/ContractCarrierAgreement.pdf");
-    }
-});
+	$(document).ready(function() {
+		sessionStorage.clear();
+		$('input').change(function() {
+			sessionStorage.setItem(this.id, this.value);
+		});
 	});
-});
-
 </script>
 </head>
 <body>
-<form method="post" id="FSForm" action="leaseagreementform2.html" enctype="multipart/form-data" onsubmit="return Vromansys.Form.processSubmit(this);">
+<form method="post" id="FSForm" action="LeaseAgreementForm2.html" enctype="multipart/form-data" onsubmit="return Vromansys.Form.processSubmit(this);">
 <div style="display:none;">
 <input type="hidden" name="locid" value="4btrucking/form2" />
 <input type="hidden" name="EParam" value="AT1kKIiyxDwgkMDpqMn6KKeLTfEDMMCuFI4OUjw2iokOABHUPex3IgLXHW6CFRNqyNvJN1WNdT4=" />
@@ -364,7 +347,7 @@ If you plan on operating under your own insurance and operating authority please
 <div id="q10" class="q">
 <a class="item_anchor" name="ItemAnchor2"></a>
 <label class="question top_question" for="RESULT_TextField-2">Your Personal Name (DBA Legal Name)</label>
-<input type="text" name="RESULT_TextField-2" class="text_field" id="RESULT_TextField-2"  size="25" maxlength="100" value="" />
+<input type="text" name="RESULT_TextField-2" class="text_field" id="DBA Name"  size="25" maxlength="100" value="" />
 </div>
 
 <div class="clear"></div>
@@ -372,7 +355,7 @@ If you plan on operating under your own insurance and operating authority please
 <div id="q11" class="q">
 <a class="item_anchor" name="ItemAnchor3"></a>
 <label class="question top_question" for="RESULT_TextField-3">Legal Entity</label>
-<input type="text" name="RESULT_TextField-3" class="text_field" id="RESULT_TextField-3"  size="25" maxlength="100" value="" />
+<input type="text" name="RESULT_TextField-3" class="text_field" id="Legal Name"  size="25" maxlength="100" value="" />
 </div>
 
 <div class="clear"></div>
@@ -380,12 +363,12 @@ If you plan on operating under your own insurance and operating authority please
 <div id="q0" class="q required">
 <a class="item_anchor" name="ItemAnchor4"></a>
 <label class="question top_question" for="RESULT_TextField-4">Person Completing This Form First Name&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-4" class="text_field" id="RESULT_TextField-4"  size="22" maxlength="255" value="" />
+<input type="text" name="RESULT_TextField-4" class="text_field" id="firstName"  size="22" maxlength="255" value="" />
 </div>
 <div id="q1" class="q required">
 <a class="item_anchor" name="ItemAnchor5"></a>
 <label class="question top_question" for="RESULT_TextField-5">Person Completing This Form Last Name&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-5" class="text_field" id="RESULT_TextField-5"  size="22" maxlength="255" value="" />
+<input type="text" name="RESULT_TextField-5" class="text_field" id="lastName"  size="22" maxlength="255" value="" />
 </div>
 
 <div class="clear"></div>
@@ -393,7 +376,7 @@ If you plan on operating under your own insurance and operating authority please
 <div id="q2" class="q required">
 <a class="item_anchor" name="ItemAnchor6"></a>
 <label class="question top_question" for="RESULT_TextField-6">Street Address&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-6" class="text_field" id="RESULT_TextField-6"  size="52" value="" />
+<input type="text" name="RESULT_TextField-6" class="text_field" id="Street Address"  size="52" value="" />
 </div>
 
 <div class="clear"></div>
@@ -401,7 +384,7 @@ If you plan on operating under your own insurance and operating authority please
 <div id="q3" class="q">
 <a class="item_anchor" name="ItemAnchor7"></a>
 <label class="question top_question" for="RESULT_TextField-7">Address Line 2</label>
-<input type="text" name="RESULT_TextField-7" class="text_field" id="RESULT_TextField-7"  size="52" value="" />
+<input type="text" name="RESULT_TextField-7" class="text_field" id="Address Line 2"  size="52" value="" />
 </div>
 
 <div class="clear"></div>
@@ -416,57 +399,57 @@ If you plan on operating under your own insurance and operating authority please
 <label class="question top_question" for="RESULT_RadioButton-9">State&nbsp;<b class="icon_required">*</b></label>
 <select id="State" name="RESULT_RadioButton-9" class="drop_down">
 <option></option>
-<option value="Radio-0">Alabama</option>
-<option value="Radio-1">Alaska</option>
-<option value="Radio-2">Arizona</option>
-<option value="Radio-3">Arkansas</option>
-<option value="Radio-4">California</option>
-<option value="Radio-5">Colorado</option>
-<option value="Radio-6">Connecticut</option>
-<option value="Radio-7">Delaware</option>
-<option value="Radio-8">Florida</option>
-<option value="Radio-9">Georgia</option>
-<option value="Radio-10">Hawaii</option>
-<option value="Radio-11">Idaho</option>
-<option value="Radio-12">Illinois</option>
-<option value="Radio-13">Indiana</option>
-<option value="Radio-14">Iowa</option>
-<option value="Radio-15">Kansas</option>
-<option value="Radio-16">Kentucky</option>
-<option value="Radio-17">Louisiana</option>
-<option value="Radio-18">Maine</option>
-<option value="Radio-19">Maryland</option>
-<option value="Radio-20">Massachusetts</option>
-<option value="Radio-21">Michigan</option>
-<option value="Radio-22">Minnesota</option>
-<option value="Radio-23">Mississippi</option>
-<option value="Radio-24">Missouri</option>
-<option value="Radio-25">Montana</option>
-<option value="Radio-26">Nebraska</option>
-<option value="Radio-27">Nevada</option>
-<option value="Radio-28">New Hampshire</option>
-<option value="Radio-29">New Jersey</option>
-<option value="Radio-30">New Mexico</option>
-<option value="Radio-31">New York</option>
-<option value="Radio-32">North Carolina</option>
-<option value="Radio-33">North Dakota</option>
-<option value="Radio-34">Ohio</option>
-<option value="Radio-35">Oklahoma</option>
-<option value="Radio-36">Oregon</option>
-<option value="Radio-37">Pennsylvania</option>
-<option value="Radio-38">Rhode Island</option>
-<option value="Radio-39">South Carolina</option>
-<option value="Radio-40">South Dakota</option>
-<option value="Radio-41">Tennessee</option>
-<option value="Radio-42">Texas</option>
-<option value="Radio-43">Utah</option>
-<option value="Radio-44">Vermont</option>
-<option value="Radio-45">Virginia</option>
-<option value="Radio-46">Washington</option>
-<option value="Radio-47">West Virginia</option>
-<option value="Radio-48">Wisconsin</option>
-<option value="Radio-49">Wyoming</option>
-<option value="Radio-50">Washington DC</option>
+<option >Alabama</option>
+<option >Alaska</option>
+<option >Arizona</option>
+<option >Arkansas</option>
+<option >California</option>
+<option >Colorado</option>
+<option >Connecticut</option>
+<option >Delaware</option>
+<option >Florida</option>
+<option >Georgia</option>
+<option >Hawaii</option>
+<option >Idaho</option>
+<option >Illinois</option>
+<option >Indiana</option>
+<option >Iowa</option>
+<option >Kansas</option>
+<option >Kentucky</option>
+<option >Louisiana</option>
+<option >Maine</option>
+<option >Maryland</option>
+<option >Massachusetts</option>
+<option >Michigan</option>
+<option >Minnesota</option>
+<option >Mississippi</option>
+<option >Missouri</option>
+<option >Montana</option>
+<option >Nebraska</option>
+<option >Nevada</option>
+<option >New Hampshire</option>
+<option >New Jersey</option>
+<option >New Mexico</option>
+<option >New York</option>
+<option >North Carolina</option>
+<option >North Dakota</option>
+<option >Ohio</option>
+<option >Oklahoma</option>
+<option >Oregon</option>
+<option >Pennsylvania</option>
+<option >Rhode Island</option>
+<option >South Carolina</option>
+<option >South Dakota</option>
+<option >Tennessee</option>
+<option >Texas</option>
+<option >Utah</option>
+<option >Vermont</option>
+<option >Virginia</option>
+<option >Washington</option>
+<option >West Virginia</option>
+<option >Wisconsin</option>
+<option >Wyoming</option>
+<option >Washington DC</option>
 </select>
 </div>
 
@@ -475,7 +458,7 @@ If you plan on operating under your own insurance and operating authority please
 <div id="q6" class="q required">
 <a class="item_anchor" name="ItemAnchor10"></a>
 <label class="question top_question" for="RESULT_TextField-10">Zip Code&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-10" class="text_field" id="Zipcode"  size="10" maxlength="255" value="" />
+<input type="text" name="RESULT_TextField-10" class="text_field" id="Zip Code"  size="10" maxlength="255" value="" />
 </div>
 <div id="q7" class="q required">
 <a class="item_anchor" name="ItemAnchor11"></a>
@@ -496,8 +479,8 @@ If you plan on operating under your own insurance and operating authority please
 <div id="q12" class="q required">
 <a class="item_anchor" name="ItemAnchor13"></a>
 <label class="question top_question" for="RESULT_TextField-13">Agreement Effective Date&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-13" class="text_field calendar_field" id="Effective date" size="10" maxlength="10" datemax="" datemin="" value="04-19-2016" date="mm-dd-yy" /><img class="svg popup_button inline_button" src="/images/icons/formIcons/calendar.svg" alt="calendar" style="vertical-align:middle;"/>
-<img class="gif popup_button inline_button" src="/images/icons/formIcons/calendar.gif" alt="calendar" style="vertical-align:middle;"/>
+<input type="text" name="RESULT_TextField-13" class="text_field calendar_field" id="Effective date" size="10" maxlength="10" datemax="" datemin="" value="04-19-2016" date="mm-dd-yy" /><img class="svg popup_button inline_button" src="CSS/calendar.svg" alt="calendar" style="vertical-align:middle;"/>
+<img class="gif popup_button inline_button" src="CSS/calendar.gif" alt="calendar" style="vertical-align:middle;"/>
 
 </div>
 
