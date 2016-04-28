@@ -298,23 +298,6 @@ $( document ).ready(function() {
 $('input').change(function () { 
 	sessionStorage.setItem(this.id,this.value);
 });
-$('#save').click(function(){
-		sessionStorage.setItem("agreementType","TruckLeaseAndServiceAgreement");
-		$.ajax({
-    url : "http://localhost:8080/EditAgreementForm/rest/PdfService/editForm",
-    type: "GET",
-    data : {data:JSON.stringify(sessionStorage)},
-    success: function()
-    {
-       window.open("file:///G:/my_db/MyGit/StartedUp/AgreementForm/ContractCarrierAgreement.pdf");
-    },
-    error: function ()
-    {
- 		alert('Something went wrong try again');
- 		window.open("file:///G:/my_db/MyGit/StartedUp/AgreementForm/ContractCarrierAgreement.pdf");
-    }
-});
-	});
 });
 
 </script>
@@ -349,15 +332,15 @@ $('#save').click(function(){
 <div id="q14" class="q required">
 <a class="item_anchor" name="ItemAnchor20"></a>
 <label class="question top_question" for="RESULT_TextField-20">Tractor Year&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-20" class="text_field" id="RESULT_TextField-20"  size="4" maxlength="4" value="" />
+<input type="text" name="RESULT_TextField-20" class="text_field" id="Tractor Year"  size="4" maxlength="4" value="" />
 </div>
 
 <div class="clear"></div>
 
 <div id="q15" class="q required">
 <a class="item_anchor" name="ItemAnchor21"></a>
-<label class="question top_question" for="RESULT_TextField-21">Tractor Make&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-21" class="text_field" id="RESULT_TextField-21"  size="50" maxlength="50" value="" />
+<label class="question top_question" for="RESULT_TextField-21">&nbsp;<b class="icon_required">*</b></label>
+<input type="text" name="RESULT_TextField-21" class="text_field" id="Tractor Year"  size="50" maxlength="50" value="" />
 </div>
 
 <div class="clear"></div>
@@ -365,7 +348,7 @@ $('#save').click(function(){
 <div id="q16" class="q">
 <a class="item_anchor" name="ItemAnchor22"></a>
 <label class="question top_question" for="RESULT_TextField-22">Tractor Model</label>
-<input type="text" name="RESULT_TextField-22" class="text_field" id="RESULT_TextField-22"  size="50" maxlength="50" value="" />
+<input type="text" name="RESULT_TextField-22" class="text_field" id="Tractor Model"  size="50" maxlength="50" value="" />
 </div>
 
 <div class="clear"></div>
@@ -373,7 +356,7 @@ $('#save').click(function(){
 <div id="q17" class="q required">
 <a class="item_anchor" name="ItemAnchor23"></a>
 <label class="question top_question" for="RESULT_TextField-23">Tractor VIN Number&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-23" class="text_field" id="RESULT_TextField-23"  size="25" maxlength="25" value="" />
+<input type="text" name="RESULT_TextField-23" class="text_field" id="Tractor Vin"  size="25" maxlength="25" value="" />
 </div>
 
 <div class="clear"></div>
@@ -381,7 +364,7 @@ $('#save').click(function(){
 <div id="q23" class="q required">
 <a class="item_anchor" name="ItemAnchor24"></a>
 <label class="question top_question" for="RESULT_TextField-24">Tractor License #&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-24" class="text_field" id="RESULT_TextField-24"  size="10" maxlength="10" value="" />
+<input type="text" name="RESULT_TextField-24" class="text_field" id="Tractor License"  size="10" maxlength="10" value="" />
 </div>
 
 <div class="clear"></div>
@@ -412,7 +395,7 @@ $('#save').click(function(){
 <div id="q19" class="q required">
 <a class="item_anchor" name="ItemAnchor27"></a>
 <label class="question top_question" for="RESULT_TextField-27">Trailer Year&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-27" class="text_field" id="RESULT_TextField-27"  size="4" maxlength="4" value="" />
+<input type="text" name="RESULT_TextField-27" class="text_field" id="Trailer Year"  size="4" maxlength="4" value="" />
 </div>
 
 <div class="clear"></div>
@@ -420,7 +403,7 @@ $('#save').click(function(){
 <div id="q20" class="q required">
 <a class="item_anchor" name="ItemAnchor28"></a>
 <label class="question top_question" for="RESULT_TextField-28">Trailer Make&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-28" class="text_field" id="RESULT_TextField-28"  size="25" maxlength="25" value="" />
+<input type="text" name="RESULT_TextField-28" class="text_field" id="Trailer Make"  size="25" maxlength="25" value="" />
 </div>
 
 <div class="clear"></div>
@@ -428,7 +411,7 @@ $('#save').click(function(){
 <div id="q21" class="q">
 <a class="item_anchor" name="ItemAnchor29"></a>
 <label class="question top_question" for="RESULT_TextField-29">Trailer Model</label>
-<input type="text" name="RESULT_TextField-29" class="text_field" id="RESULT_TextField-29"  size="25" maxlength="25" value="" />
+<input type="text" name="RESULT_TextField-29" class="text_field" id="Trailer Model"  size="25" maxlength="25" value="" />
 </div>
 
 <div class="clear"></div>
@@ -436,7 +419,7 @@ $('#save').click(function(){
 <div id="q22" class="q required">
 <a class="item_anchor" name="ItemAnchor30"></a>
 <label class="question top_question" for="RESULT_TextField-30">Trailer VIN Number&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-30" class="text_field" id="RESULT_TextField-30"  size="25" maxlength="25" value="" />
+<input type="text" name="RESULT_TextField-30" class="text_field" id="Trailer Vin"  size="25" maxlength="25" value="" />
 </div>
 
 <div class="clear"></div>
@@ -444,7 +427,7 @@ $('#save').click(function(){
 <div id="q24" class="q required">
 <a class="item_anchor" name="ItemAnchor31"></a>
 <label class="question top_question" for="RESULT_TextField-31">Trailer License #&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-31" class="text_field" id="RESULT_TextField-31"  size="10" maxlength="10" value="" />
+<input type="text" name="RESULT_TextField-31" class="text_field" id="Trailer License"  size="10" maxlength="10" value="" />
 </div>
 
 <div class="clear"></div>
@@ -461,7 +444,7 @@ $('#save').click(function(){
 <script type="text/javascript">var itemRules={19:{"criteria":[{"item":18,"answer":"0","operator":"=="}],"action":"show","join":"||"},20:{"criteria":[{"item":18,"answer":"0","operator":"=="}],"action":"show","join":"||"},21:{"criteria":[{"item":18,"answer":"0","operator":"=="}],"action":"show","join":"||"},22:{"criteria":[{"item":18,"answer":"0","operator":"=="}],"action":"show","join":"||"},24:{"criteria":[{"item":18,"answer":"0","operator":"=="}],"action":"show","join":"||"}};</script>
 <input type="hidden" name="EParam" value="x8J1JeDzqXaincwrthp1RHwzyiKts/y3" />
 <div class="outside_container">
-<div class="buttons_reverse"><input type="submit" name="Submit" value="Next &gt;&gt;" class="submit_button" id="FSsubmit" /><input type="submit" name="PreviousSubmit" value="&lt;&lt; Previous" class="submit_button" id="FSpreviousSubmit" /></div></div>
+<div class="buttons_reverse"><input type="submit" name="Submit" value="Next &gt;&gt;" class="submit_button" id="FSsubmit" /></div></div>
 </form>
 </body>
 </html>

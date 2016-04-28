@@ -292,6 +292,34 @@ tr.highlight td{
 <script type="text/javascript">
 var instructions = {};
 instructions[26] = "Base Lease Fee is required.  The other choices are optional.";
+$(document).ready(function() {
+	$('input').change(function() {
+			sessionStorage.setItem(this.id, this.value);
+		});
+		$('#save').click(function() {
+			$('#load').show();
+			var ContractorName = (sessionStorage.getItem("firstName") == null ? "" : sessionStorage.getItem("firstName")) + " " + (sessionStorage.getItem("lastName") == null ? "" : sessionStorage.getItem("lastName"));
+			var ContractorAddress = (sessionStorage.getItem("Street Address") == null ? "" : sessionStorage.getItem("Street Address")) + " " + (sessionStorage.getItem("Address Line 2") == null ? "" : sessionStorage.getItem("Address Line 2"));
+			sessionStorage.setItem("Contractor Address", ContractorAddress);
+			sessionStorage.setItem("Contractor Name", ContractorName);
+			sessionStorage.setItem("Title", "Lease");
+			sessionStorage.setItem("agreementType", "LeaseAgreement");
+			$.ajax({
+				//52.34.145.199
+				url : "http://52.34.145.199:8080/4bTruckingAgreementSave/rest/PdfService/editFormItext",
+				type : "GET",
+				dataType : "text",
+				data : {
+					data : JSON.stringify(sessionStorage)
+				},
+				crossDomain: true,
+				success : function() {
+					$('#load').hide();
+					window.open("http://52.34.145.199:8080/4bTruckingAgreementSave/LeaseAgreement.pdf");
+				}
+			});
+		});
+	});
 </script>
 </head>
 <body>
@@ -358,7 +386,7 @@ instructions[26] = "Base Lease Fee is required.  The other choices are optional.
 <div id="q44" class="q required">
 <a class="item_anchor" name="ItemAnchor50"></a>
 <label class="question top_question" for="RESULT_TextField-50">I agree and understand these requirements (Place your initials here)&nbsp;<b class="icon_required">*</b></label>
-<input type="text" name="RESULT_TextField-50" class="text_field" id="RESULT_TextField-50"  size="4" maxlength="4" value="" />
+<input type="text" name="RESULT_TextField-50" class="text_field" id="PaperworkAck"  size="4" maxlength="4" value="" />
 </div>
 <div class="clear"></div>
 
@@ -366,7 +394,11 @@ instructions[26] = "Base Lease Fee is required.  The other choices are optional.
 <!-- END_ITEMS -->
 <input type="hidden" name="EParam" value="x8J1JeDzqXaincwrthp1RHwzyiKts/y3" />
 <div class="outside_container">
-<div class="buttons_reverse"><input type="submit" name="Submit" value="Submit" class="submit_button" id="FSsubmit" /><input type="submit" name="PreviousSubmit" value="&lt;&lt; Previous" class="submit_button" id="FSpreviousSubmit" /></div></div>
+<div class="buttons_reverse">
+	<input type="button" name="Save Pdf" value="Save Pdf" class="submit_button" id="save" />
+	<span><img id="load" style="display: none" src="load.gif" /></span>
+</div>
+</div>
 </form>
 </body>
 </html>

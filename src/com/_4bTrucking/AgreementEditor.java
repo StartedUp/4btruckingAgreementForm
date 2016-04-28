@@ -35,7 +35,7 @@ public class AgreementEditor {
 	private static PDDocument _pdfDocument;
 	private static int count;
 
-	@GET
+	/*@GET
 	@Path("/editForm")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response saveAgreement(@DefaultValue("") @QueryParam("data") String data) {
@@ -48,14 +48,14 @@ public class AgreementEditor {
 		Map<String, String> fieldNameAndValue = gson.fromJson(data, type);
 		String agreementType = fieldNameAndValue.get("agreementType");
 		System.out.println(fieldNameAndValue);
-		/*String src = "G:/Softwares/webserver/apache-tomcat-8.0.27/apache-tomcat-8.0.27/webapps/4bTruckingAgreementSave/"
+		String src = "G:/Softwares/webserver/apache-tomcat-8.0.27/apache-tomcat-8.0.27/webapps/4bTruckingAgreementSave/"
 				+ agreementType + "Src.pdf";
 		String test = "G:/Softwares/webserver/apache-tomcat-8.0.27/apache-tomcat-8.0.27/webapps/4bTruckingAgreementSave/"
-				+ agreementType + ".pdf";*/
-		/*String src = "/data/apache-tomcat-7.0.35/webapps/4bTruckingAgreementSave/"
+				+ agreementType + ".pdf";
+		String src = "/data/apache-tomcat-7.0.35/webapps/4bTruckingAgreementSave/"
 				+ agreementType + "Src.pdf";
 		String test = "/data/apache-tomcat-7.0.35/webapps/4bTruckingAgreementSave/"
-				+ agreementType + ".pdf";*/
+				+ agreementType + ".pdf";
 		String src = "/data/tomcat8/webapps/4bTruckingAgreementSave/"
 		+ agreementType + "Src.pdf";
 String test = "/data/tomcat8/webapps/4bTruckingAgreementSave/"
@@ -87,7 +87,7 @@ String test = "/data/tomcat8/webapps/4bTruckingAgreementSave/"
 			e.printStackTrace();
 		}
 		return Response.status(200).entity("ok").build();
-	}
+	}*/
 	@GET
 	@Path("/editFormItext")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -126,12 +126,12 @@ String test = "/data/tomcat8/webapps/4bTruckingAgreementSave/"
 	        		form.setFieldProperty(key, "textsize", new Float(0), null);
 	        		form.setField(key, fieldNameAndValue.get(key));
 				}
-	        	if(key!=null && form.getFieldType(key)==6){
+	        	/*if(key!=null && form.getFieldType(key)==6){
 	        		form.setListSelection(key, new String []{fieldNameAndValue.get(key)});
 	        		for (String string : form.getListSelection(key)) {
 	        			System.out.println(string);
 					}
-	        	}
+	        	}*/
 	        }
 	        //form.setField("LegalName", "Prithvi Prakash");	
 	        stamper.setFormFlattening(true);
