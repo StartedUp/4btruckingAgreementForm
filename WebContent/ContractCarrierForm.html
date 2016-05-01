@@ -311,6 +311,11 @@ tr.highlight td {
 		$('input').change(function() {
 			sessionStorage.setItem(this.id, this.value);
 		});
+		$("#next1").click(function(){
+			var image = document.getElementsByTagName("canvas")[0].toDataURL("image/png");
+			image = image.replace('data:image/png;base64,', '');
+			sessionStorage.setItem("signature",image);
+		});
 	}); 
 </script>
 </head>
@@ -589,7 +594,7 @@ tr.highlight td {
 			<button type="submit" class="btn btn-success" id="next1">
 				Next</button>
 			<span><img id="load" style="display: none"
-				src="http://79.125.22.83:8080/4bTruckingAgreementSave/load.gif" /></span>
+				src="load.gif" /></span>
 		</div>
 	</form>
 
